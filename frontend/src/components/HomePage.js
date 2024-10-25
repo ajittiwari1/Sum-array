@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/HomePage.css';
-import Modal from './Modal.js';
+import Modal from './Modal1.js';
 import Lottie from 'lottie-react'; // Import Lottie for animations
 import animationData from '../animations/animation.json'; // Import your JSON animation file
 
@@ -24,7 +24,7 @@ const HomePage = ({ darkTheme }) => {
   return (
     <div className={`home-page ${darkTheme ? 'dark' : ''}`}>
       <div className="home-page-content">
-        <h1>Welcome to the page that summarizes long videos to short</h1>
+        <p>"From Hours to Highlights: Video Summaries, Simplified!"</p>
         <button className="primary-button" onClick={handleUploadClick}>
           Upload Video File
         </button>

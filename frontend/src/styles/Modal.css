@@ -17,7 +17,11 @@
     padding: 2rem;
     border-radius: 10px;
     text-align: center;
-    width: 400px;
+    width: 450px;
+    font-size: 15px;
+  }
+  .modal-content p{
+    font-size: 18px;
   }
   
   .modal-buttons {
@@ -44,4 +48,3 @@
   .cancel-button:hover, .upload-button:hover {
     opacity: 0.8;
   }
-  
