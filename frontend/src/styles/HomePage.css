@@ -1,0 +1,223 @@
+.home-page {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  background-color: #202020;
+  color: white;
+  padding: 0;
+}
+
+.home-page-content {
+  flex: 1;
+  padding: 50px;
+  color: white;
+  background-color: inherit; /* Inherit the dark or light background color */
+}
+
+.home-page-video {
+  flex: 1;
+  height: 100%;
+  background-color: #333; /* Fallback background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.primary-button {
+  padding: 10px 20px;
+  background-color: #555;
+  border: none;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.primary-button:hover {
+  background-color: #777;
+}
+
+/* Light Theme */
+.app {
+  background-color: white;
+  color: black;
+}
+
+.home-page h1 {
+  color: inherit;
+}
+
+/* Dark Theme */
+.app.dark {
+  background-color: #121212;
+  color: white;
+}
+
+.home-page.dark h1 {
+  color: white;
+}
+
+.navbar.dark {
+  background-color: #333;
+  color: white;
+}
+
+/* For responsive design, stacking content vertically on smaller screens */
+@media screen and (max-width: 768px) {
+  .home-page {
+    flex-direction: column;
+  }
+
+  .home-page-content,
+  .home-page-video {
+    flex: unset;
+    width: 100%;
+  }
+}
+
+.home-page {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  background-color: #202020;
+  color: white;
+  padding: 0;
+}
+
+.home-page-content {
+  flex: 1;
+  padding: 50px;
+  color: white;
+  background-color: inherit;
+}
+
+.home-page-video {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #333;
+  padding: 20px;
+}
+
+.primary-button {
+  padding: 10px 20px;
+  background-color: #555;
+  border: none;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.primary-button:hover {
+  background-color: #777;
+}
+
+/* Adjust Lottie animation size */
+.animated-lottie {
+  width: 100%;
+  height: auto;
+  max-width: 500px; /* Adjust as necessary */
+}
+
+/* Responsive design for mobile */
+@media screen and (max-width: 768px) {
+  .home-page {
+    flex-direction: column;
+  }
+
+  .home-page-content, 
+  .home-page-video {
+    width: 100%;
+  }
+}
+/* HomePage.css */
+.home-page {
+  display: flex; /* Use flexbox to arrange children side by side */
+  align-items: center; /* Center content vertically */
+  justify-content: space-between; /* Space out content evenly */
+  padding: 20px; /* Optional padding */
+}
+
+.home-page-content {
+  flex: 1; /* Allow this section to take up available space */
+  margin-right: 20px; /* Add some space between the content and the animation */
+}
+
+.home-page-animation {
+  flex: 1; /* Allow this section to take up available space */
+  display: flex; /* Center the animation inside the div */
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ensure the Lottie animation is responsive */
+.animated-lottie {
+  width: 100%; /* Responsive width */
+  max-width: 400px; /* Max width to prevent it from being too large */
+}
+
+/* Additional styles for dark theme */
+.dark {
+  background-color: #333; /* Example dark background */
+  color: white; /* Example dark text color */
+}
+
+.primary-button {
+  background-color: #007bff; /* Button color */
+  color: white; /* Button text color */
+  border: none; /* Remove default border */
+  padding: 10px 15px; /* Button padding */
+  cursor: pointer; /* Pointer cursor on hover */
+  border-radius: 5px; /* Optional rounded corners */
+}
+/* HomePage.css */
+.home-page {
+  display: flex;
+  padding: 20px;
+}
+
+.home-page-content, .home-page-animation {
+  flex: 1; /* Equal space for both sections */
+}
+
+.home-page-animation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Optional styles for the dark theme */
+.dark {
+  background-color: #333;
+  color: white;
+}
+
+.primary-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+/* HomePage.css */
+.home-page-animation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px; /* Adjust margin as needed */
+}
+
+.lottie-player {
+  width: 100%; /* Make the width responsive */
+  max-width: 600px; /* Set a maximum width */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.video-player {
+  width: 100%; /* Make the video responsive */
+  max-width: 600px; /* Set a maximum width */
+  height: auto; /* Maintain aspect ratio */
+}

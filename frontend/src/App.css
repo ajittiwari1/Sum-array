@@ -1,0 +1,37 @@
+body {
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.theme-toggle, .login-btn {
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover, .login-btn:hover {
+  transform: scale(1.1);
+  background-color: #666;
+}
+.upload-page {
+  padding: 2rem;
+  text-align: center;
+}
+
+.upload-page h2 {
+  margin-bottom: 1rem;
+}
+
+.upload-page input {
+  margin-bottom: 1rem;
+}
+
+.upload-btn {
+  padding: 0.5rem 1rem;
+  background-color: #444;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.upload-btn:hover {
+  background-color: #666;
+}

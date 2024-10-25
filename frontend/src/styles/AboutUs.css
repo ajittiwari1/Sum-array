@@ -1,0 +1,55 @@
+/* AboutUs.css */
+
+.about-us {
+    background-color: #202020; /* Set the background color */
+    color: white; /* Set text color to white for better contrast */
+    padding: 40px; /* Add more padding for spacing */
+    min-height: 100vh; /* Ensure it takes at least the full height of the viewport */
+    text-align: center; /* Center-align all text */
+    font-family: 'Arial', sans-serif; /* Change the font for better readability */
+}
+
+h1 {
+    font-size: 2.5rem; /* Increase font size for the heading */
+    margin-bottom: 20px; /* Add space below the heading */
+    text-transform: uppercase; /* Uppercase for a more impactful heading */
+}
+
+p {
+    font-size: 1.2rem; /* Increase font size for the paragraph */
+    line-height: 1.6; /* Increase line height for better readability */
+    max-width: 800px; /* Set a maximum width for paragraphs */
+    margin: 0 auto; /* Center the paragraph block */
+}
+
+.team-cards {
+    display: flex; /* Use flexbox for card layout */
+    justify-content: center; /* Center the cards */
+    flex-wrap: wrap; /* Allow wrapping of cards */
+    gap: 20px; /* Space between cards */
+    margin-top: 40px; /* Add margin above the team cards */
+}
+
+.team-card {
+    background-color: #333; /* Card background color */
+    padding: 20px; /* Add padding inside the card */
+    border-radius: 8px; /* Rounded corners */
+    text-align: center; /* Center text in card */
+    width: 250px; /* Set a fixed width for cards */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Add shadow for depth */
+    transition: transform 0.3s; /* Transition for hover effect */
+}
+
+.team-card:hover {
+    transform: translateY(-5px); /* Slightly raise card on hover */
+}
+
+.team-card h3 {
+    font-size: 1.5rem; /* Increase font size for the name */
+    margin-bottom: 10px; /* Space below the name */
+}
+
+.team-card p {
+    margin: 5px 0; /* Add margin between college and role */
+    font-size: 1rem; /* Set font size for college and role */
+}

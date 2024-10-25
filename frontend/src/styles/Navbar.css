@@ -1,0 +1,66 @@
+/* Navbar.css */
+
+.navbar {
+  position: sticky; /* Makes the navbar sticky */
+  top: 0; /* Sticks to the top of the viewport */
+  background-color: #202020; /* Set background color */
+  padding: 15px 20px; /* Add padding for aesthetics */
+  display: flex; /* Use flexbox for alignment */
+  justify-content: space-between; /* Space between logo and menu */
+  align-items: center; /* Center items vertically */
+  z-index: 1000; /* Ensure it's above other elements */
+  transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+.navbar-logo {
+  font-size: 28px; /* Increased font size for logo */
+  color: white; /* Set logo text color */
+  font-weight: bold; /* Make logo text bold */
+}
+
+.navbar-menu {
+  list-style-type: none; /* Remove bullet points from list */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  display: flex; /* Use flexbox for the menu */
+}
+
+.navbar-menu li {
+  margin-left: 30px; /* Space between menu items */
+}
+
+.nav-link {
+  color: white; /* Set link color */
+  text-decoration: none; /* Remove underline from links */
+  font-weight: bold; /* Make links bold */
+  font-size: 18px; /* Increased font size for links */
+  position: relative; /* Position for hover effect */
+  transition: color 0.3s; /* Smooth transition for color change */
+}
+
+.nav-link:hover {
+  color: #007bff; /* Change color on hover */
+}
+
+.nav-link.active {
+  border-bottom: 2px solid #007bff; /* Add underline for active link */
+}
+
+.login-btn {
+  background-color: #007bff; /* Button color */
+  color: white; /* Button text color */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 5px 10px; /* Padding for button */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  font-size: 16px; /* Increased font size for button */
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+.login-btn:hover {
+  background-color: #0056b3; /* Darker color on hover */
+}
+
+.login-btn:active {
+  background-color: #004494; /* Even darker color when clicked */
+}
