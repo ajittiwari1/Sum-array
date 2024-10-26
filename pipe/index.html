@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pipeline Process Simulation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 font-sans">
+
+    <div class="container mx-auto mt-10 p-6 bg-white rounded-lg shadow-lg">
+        <h1 class="text-3xl font-bold text-center mb-6">Pipeline Process Simulation</h1>
+
+        <!-- Step 1: Upload Video -->
+        <div id="uploadSection" class="text-center">
+            <label class="block text-xl font-semibold mb-2">Step 1: Upload Video</label>
+            <input type="file" id="videoUpload" accept=".mp4" class="hidden" onchange="handleUpload()">
+            <button onclick="document.getElementById('videoUpload').click()"
+                class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
+                Upload Video
+            </button>
+        </div>
+
+        <!-- Step 2: Convert Video to Audio -->
+        <div id="audioSection" class="mt-6 hidden text-center">
+            <label class="block text-xl font-semibold mb-2">Step 2: Convert Video to Audio (MP3)</label>
+            <button onclick="convertToAudio()" class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600">
+                Convert to MP3
+            </button>
+            <audio id="audioPlayer" controls class="mt-4 hidden mx-auto"></audio>
+            <button onclick="showNextSection('chunkSection')"
+                class="mt-4 hidden next-btn bg-blue-500 text-white px-4 py-2 rounded-lg">Next</button>
+        </div>
+
+        <!-- Step 3: Divide Audio into Chunks -->
+        <div id="chunkSection" class="mt-6 hidden text-center">
+            <label class="block text-xl font-semibold mb-2">Step 3: Divide Audio into Chunks</label>
+            <button onclick="createChunks()" class="bg-yellow-500 text-white px-4 py-2 rounded-lg hover:bg-yellow-600">
+                Divide into Chunks
+            </button>
+            <div id="chunksContainer" class="mt-4 grid grid-cols-3 gap-4 hidden">
+                <!-- Placeholder for Audio Chunks -->
+            </div>
+            <button onclick="showNextSection('transcriptionSection')"
+                class="mt-4 hidden next-btn bg-blue-500 text-white px-4 py-2 rounded-lg">Next</button>
+        </div>
+
+        <!-- Step 4: Transcribe Audio Chunks -->
+        <div id="transcriptionSection" class="mt-6 hidden text-center">
+            <label class="block text-xl font-semibold mb-2">Step 4: Transcribe Audio Chunks</label>
+            <button onclick="transcribeAudio()"
+                class="bg-purple-500 text-white px-4 py-2 rounded-lg hover:bg-purple-600">
+                Transcribe
+            </button>
+            <div id="transcriptionText" class="mt-4 text-gray-700 text-sm hidden"></div>
+            <button onclick="showNextSection('summarySection')"
+                class="mt-4 hidden next-btn bg-blue-500 text-white px-4 py-2 rounded-lg">Next</button>
+        </div>
+
+        <!-- Step 5: Summarize Text -->
+        <div id="summarySection" class="mt-6 hidden text-center">
+            <label class="block text-xl font-semibold mb-2">Step 5: Summarize Text</label>
+            <button onclick="summarizeText()" class="bg-indigo-500 text-white px-4 py-2 rounded-lg hover:bg-indigo-600">
+                Summarize
+            </button>
+            <div id="summaryText" class="mt-4 text-gray-700 text-sm hidden"></div>
+            <button onclick="showNextSection('imageSection')"
+                class="mt-4 hidden next-btn bg-blue-500 text-white px-4 py-2 rounded-lg">Next</button>
+        </div>
+
+        <!-- Step 6: Generate Images from Keywords -->
+        <div id="imageSection" class="mt-6 hidden text-center">
+            <label class="block text-xl font-semibold mb-2">Step 6: Generate Images from Keywords</label>
+            <button onclick="generateImages()" class="bg-teal-500 text-white px-4 py-2 rounded-lg hover:bg-teal-600">
+                Generate Images
+            </button>
+            <div id="imageContainer" class="mt-4 grid grid-cols-2 gap-4 hidden">
+                <!-- Placeholder for Generated Images -->
+            </div>
+            <button onclick="showNextSection('videoSection')"
+                class="mt-4 hidden next-btn bg-blue-500 text-white px-4 py-2 rounded-lg">Next</button>
+        </div>
+
+        <!-- Step 7: Final Video -->
+        <div id="videoSection" class="mt-6 hidden text-center">
+            <label class="block text-xl font-semibold mb-2">Step 7: Final Video with Captions</label>
+            <button onclick="generateFinalVideo()" class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600">
+                Generate Final Video
+            </button>
+            <video id="finalVideo" controls class="mt-4 hidden mx-auto w-full max-w-lg"></video>
+            <a id="downloadLink" download="output_video.mp4" class="text-blue-500 underline mt-4 hidden">Download
+                Video</a>
+        </div>
+    </div>
+
+    <script>
+        // Function to display the next section
+        function showNextSection(sectionId) {
+            document.getElementById(sectionId).classList.remove("hidden");
+        }
+
+        function handleUpload() {
+            // Simulate upload and enable audio section
+            document.getElementById("uploadSection").classList.add("hidden");
+            document.getElementById("audioSection").classList.remove("hidden");
+        }
+
+        function convertToAudio() {
+            const audioPlayer = document.getElementById("audioPlayer");
+            audioPlayer.src = "output/audio/summary.mp3"; // Simulated path
+            audioPlayer.classList.remove("hidden");
+
+            document.querySelector("#audioSection .next-btn").classList.remove("hidden");
+        }
+
+        function createChunks() {
+            const chunksContainer = document.getElementById("chunksContainer");
+            chunksContainer.innerHTML = ""; // Clear any previous chunks
+
+            for (let i = 0; i <= 5; i++) {
+                const audio = document.createElement("audio");
+                audio.controls = true;
+                audio.src = `output/chunks/neso_00${i}.mp3`; // Simulated paths for chunks
+                audio.className = "mt-2";
+                chunksContainer.appendChild(audio);
+            }
+
+            chunksContainer.classList.remove("hidden");
+            document.querySelector("#chunkSection .next-btn").classList.remove("hidden");
+        }
+
+        function transcribeAudio() {
+            const transcriptionText = document.getElementById("transcriptionText");
+            transcriptionText.innerText = "Loading transcription...";
+            fetch("output/text/transcript.txt")
+                .then(response => response.text())
+                .then(data => {
+                    transcriptionText.innerText = data;
+                    transcriptionText.classList.remove("hidden");
+                    document.querySelector("#transcriptionSection .next-btn").classList.remove("hidden");
+                });
+        }
+
+        function summarizeText() {
+            const summaryText = document.getElementById("summaryText");
+            fetch("output/text/summary.txt")
+                .then(response => response.text())
+                .then(data => {
+                    summaryText.innerText = data;
+                    summaryText.classList.remove("hidden");
+                    document.querySelector("#summarySection .next-btn").classList.remove("hidden");
+                });
+        }
+
+        function generateImages() {
+            const imageContainer = document.getElementById("imageContainer");
+            imageContainer.innerHTML = ""; // Clear any previous images
+
+            for (let i = 0; i < 4; i++) {
+                const img = document.createElement("img");
+                img.src = `output/images/image${i}.png`;
+                img.alt = `Generated image ${i + 1}`;
+                img.className = "rounded-lg shadow-md";
+                imageContainer.appendChild(img);
+            }
+
+            imageContainer.classList.remove("hidden");
+            document.querySelector("#imageSection .next-btn").classList.remove("hidden");
+        }
+
+        function generateFinalVideo() {
+            const finalVideo = document.getElementById("finalVideo");
+            const downloadLink = document.getElementById("downloadLink");
+
+            finalVideo.src = "output/video/output_video.mp4"; // Final video path
+            finalVideo.classList.remove("hidden");
+            downloadLink.href = finalVideo.src;
+            downloadLink.classList.remove("hidden");
+        }
+    </script>
+</body>
+
+</html>

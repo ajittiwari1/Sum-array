@@ -1,0 +1,7 @@
+Quantum mechanics is a fundamental theory in physics that describes the behavior of particles at the smallest scales—like atoms and subatomic particles. Unlike classical physics, which predicts exact outcomes, quantum mechanics is probabilistic. It tells us only the likelihood of finding a particle in a particular place or state.
+
+One of its key principles is wave-particle duality, which suggests particles, such as electrons, can act both like particles and waves depending on how they’re observed. This is famously demonstrated in the double-slit experiment, where electrons create an interference pattern, like waves, when unobserved, but behave like particles when observed.
+
+Another core concept is superposition, where particles can exist in multiple states at once, only settling into a definite state upon measurement. This phenomenon led to Schrödinger’s cat thought experiment, illustrating the strange nature of quantum states.
+
+Quantum mechanics revolutionized technology, leading to innovations like lasers, transistors, and MRI machines. While still mysterious, it’s an essential framework for understanding the universe at its most fundamental level.

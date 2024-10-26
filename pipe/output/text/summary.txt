@@ -1,0 +1,1 @@
+A function f(n) = n^2 log(n) and g(n) = n * (log(n))^10 need to be analyzed. Which of statements is correct? First statement: f(n) = Ω(g(n)). Second statement: g(n) = Ω(f(n)). Third statement: f'(n) = Ω(g(n)).
